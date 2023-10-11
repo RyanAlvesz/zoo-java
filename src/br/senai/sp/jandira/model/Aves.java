@@ -4,7 +4,7 @@ public class Aves extends Animal{
 
     public Aves(){
         super.especie = "Ave";
-        super.habitat = 3;
+        super.habitat = 2;
     }
 
 }

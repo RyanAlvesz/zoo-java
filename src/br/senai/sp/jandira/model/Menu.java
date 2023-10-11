@@ -16,88 +16,97 @@ public class Menu {
 
         while (continuar) {
 
-            System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
-            System.out.println("               Menu");
-            System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
-            System.out.println("[1- Cadastrar animal]");
-            System.out.println("[2- Exibir animais]");
-            System.out.println("[3- Alojamento]");
-            System.out.println("[4- Sair]");
-            System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
-            respostaMenu = scanner.nextInt();
-            scanner.nextLine();
+            boolean condicaoListaAnimal = referenciaAnimal.verificaListaAnimais();
 
-            switch (respostaMenu) {
+//            if (condicaoListaAnimal){
+//
+//
+//            }else {
 
-                case 1:
+                System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
+                System.out.println("               Menu");
+                System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
+                System.out.println("[1- Cadastrar animal]");
+                System.out.println("[2- Exibir animais]");
+                System.out.println("[3- Alojamento]");
+                System.out.println("[4- Sair]");
+                System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
+                respostaMenu = scanner.nextInt();
+                scanner.nextLine();
 
-                    System.out.println("");
-                    System.out.println("Que espécie você deseja cadastrar?");
-                    System.out.println("[1- Mamífero]");
-                    System.out.println("[2- Ave");
-                    System.out.println("[3- Réptil]");
-                    repostaEspecie = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println("");
+                switch (respostaMenu) {
 
-                    switch (repostaEspecie){
+                    case 1:
 
-                        case 1:
-                            Mamiferos novoMamifero = new Mamiferos();
-                            novoMamifero.cadastrarAnimal();
-                            referenciaAnimal.adicionarAnimal(novoMamifero);
-                            break;
+                        System.out.println("");
+                        System.out.println("Que espécie você deseja cadastrar?");
+                        System.out.println("[1- Mamífero]");
+                        System.out.println("[2- Ave]");
+                        System.out.println("[3- Réptil]");
+                        repostaEspecie = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("");
 
-                        case 2:
-                            Aves novaAve = new Aves();
-                            novaAve.cadastrarAnimal();
-                            referenciaAnimal.adicionarAnimal(novaAve);
-                            break;
+                        switch (repostaEspecie) {
 
-                        case 3:
-                            Repteis novoReptil = new Repteis();
-                            novoReptil.cadastrarAnimal();
-                            referenciaAnimal.adicionarAnimal(novoReptil);
-                            break;
+                            case 1:
+                                Mamiferos novoMamifero = new Mamiferos();
+                                novoMamifero.cadastrarAnimal();
+                                referenciaAnimal.adicionarAnimal(novoMamifero);
+                                break;
 
-                    }
+                            case 2:
+                                Aves novaAve = new Aves();
+                                novaAve.cadastrarAnimal();
+                                referenciaAnimal.adicionarAnimal(novaAve);
+                                break;
 
-                    break;
+                            case 3:
+                                Repteis novoReptil = new Repteis();
+                                novoReptil.cadastrarAnimal();
+                                referenciaAnimal.adicionarAnimal(novoReptil);
+                                break;
 
-                case 2:
-                    referenciaAnimal.exibirAnimais();
-                    break;
+                        }
 
-                case 3:
-                    System.out.println("");
-                    System.out.println("Que alojamento você deseja exibir?");
-                    System.out.println("[1- Mamífero]");
-                    System.out.println("[2- Ave");
-                    System.out.println("[3- Réptil]");
-                    repostaAlojamento = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println("");
+                        break;
 
-                    switch (repostaAlojamento){
+                    case 2:
+                        referenciaAnimal.exibirAnimais();
+                        break;
 
-                        case 1:
-                            referenciaAnimal.exibirMamiferos();
-                            break;
+                    case 3:
+                        System.out.println("");
+                        System.out.println("Que alojamento você deseja exibir?");
+                        System.out.println("[1- Mamífero]");
+                        System.out.println("[2- Ave]");
+                        System.out.println("[3- Réptil]");
+                        repostaAlojamento = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("");
 
-                        case 2:
-                            referenciaAnimal.exibirAves();
-                            break;
+                        switch (repostaAlojamento) {
 
-                        case 3:
-                            referenciaAnimal.exibirRepteis();
-                            break;
+                            case 1:
+                                referenciaAnimal.exibirMamiferos();
+                                break;
 
-                    }
-                    break;
+                            case 2:
+                                referenciaAnimal.exibirAves();
+                                break;
 
-                case 4:
-                    continuar = false;
-                    break;
+                            case 3:
+                                referenciaAnimal.exibirRepteis();
+                                break;
+
+                        }
+                        break;
+
+                    case 4:
+                        continuar = false;
+                        break;
+
+//                }
 
             }
 

@@ -2,25 +2,20 @@ package br.senai.sp.jandira.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.chrono.ChronoLocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.time.Period;
+import java.util.*;
 
 public class Animal {
 
     Scanner scanner = new Scanner(System.in);
-
-    LocalDate localDate = LocalDate.now();
-
-    LocalDateTime localTime = LocalDateTime.now();
 
     String nome, dieta, especie, sexo;
 
     int idade, habitat;
 
     double peso;
+
+    private LocalDateTime date;
 
     List <Animal> listaAnimais = new ArrayList<>();
 
@@ -44,6 +39,8 @@ public class Animal {
         System.out.println("•·•·•·•·•·•·•·•·•·••·•·•·•·•·•·•·•");
         System.out.println("");
 
+        this.setDate(LocalDateTime.now());
+        System.out.println(getDate());
 
     }
 
@@ -51,6 +48,33 @@ public class Animal {
         listaAnimais.add(animal);
     }
 
+    public boolean verificaListaAnimais(){
+        if (listaAnimais.isEmpty()) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+//    public boolean verificaSaude(){
+//
+//        for (Animal animal: listaAnimais) {
+//
+//            LocalDateTime time = LocalDateTime.of(2023, 10, 11, 16, 25);
+//
+//            LocalDate teste = LocalDate.now();
+//
+//            Period periodo = Period.between(teste, teste);
+//
+//            if () {
+//
+//
+//
+//            }
+//
+//        }
+//
+//    }
 
     public void exibirAnimais(){
 
@@ -148,4 +172,11 @@ public class Animal {
 
     }
 
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 }
